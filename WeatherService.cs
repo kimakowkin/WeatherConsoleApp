@@ -16,7 +16,9 @@
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception("Cannot retrieve weather data");
+                Console.WriteLine("Cannot retrieve weather data");
+                Console.WriteLine(response.ToString());
+                Console.ReadLine();
             }
 
             return await response.Content.ReadAsStringAsync();
